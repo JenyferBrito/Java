@@ -1,0 +1,59 @@
+package exerciciopratica;
+
+import java.util.Scanner;
+
+public class Exerciciopratica {
+
+    public static void main(String[] args) {
+        int num1, num2, resultado, opcao, sim, não;
+   
+ 
+       Scanner leia = new Scanner (System.in);
+        System.out.println("Insira um valor de num1: ");
+        num1 = leia.nextInt();
+        System.out.println("Insira um valor de num2: ");
+        num2 = leia.nextInt();
+        
+        System.out.println("Escolha a operação que deseja realizar:");
+        System.out.println("1. Adição (num1 + num2)");
+        System.out.println("2. Subtração (num1 - num2)");
+        System.out.println("3. Multiplicação (num1* num2)");
+        System.out.println("4. Divisão (num1 / num2)");
+        opcao = leia.nextInt();
+        
+        switch(opcao) {
+            case 1: resultado = num1 + num2;
+            break;
+            
+            case 2: resultado = num1 - num2;
+            break;
+            
+            case 3: resultado = num1 * num2;
+            break;
+            
+            case 4: if (num1 != 0) {
+                    resultado = num1 / num2;
+                } else {
+                    System.out.println("Erro: Divisão por zero!");
+                    return;
+                }
+                break;
+            default:
+                System.out.println("Opção inválida!");
+                return;
+        }
+          System.out.println("O resultado da operação é:"  + resultado);  
+          
+         
+
+          
+            
+          
+            
+        }
+        
+        
+            
+    }
+        
+    
