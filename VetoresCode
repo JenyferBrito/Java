@@ -1,0 +1,35 @@
+package exemplovetor;
+
+import java.util.Scanner;
+
+public class ExemploVetor {
+    public static void main(String[] args) {
+       float[] numeros = new float[10];
+       float media = 0, soma = 0, maiorNumero = 0;
+       Scanner leia = new Scanner(System.in);
+        for(int i=0; i < 10; i++){
+            System.out.print("Digite o numero da " +
+                    "posicao: ["+i+"]: ");
+            numeros[i] = leia.nextFloat();
+            soma = soma + numeros[i]; //somando
+            if (numeros[i]>maiorNumero){
+                maiorNumero = numeros[i];
+            }
+        }
+          System.out.println("Soma dos valores: " +
+                  soma);
+          media = soma/10;
+          System.out.println("Media dos " +
+                  "numeros: " + media);
+          System.out.println("Maior numero digitado: " +
+                  maiorNumero);
+          System.out.println("Numeros maiores que a media: ");
+           for(int i=0; i < 10; i++){
+               if (numeros[i]>media){
+                   System.out.println(numeros[i]);
+               }
+           }
+      }
+}
+    
+    
