@@ -1,31 +1,30 @@
 package atividade1;
+
 import javax.swing.*;
+
 public class Atividade1 {
     public static void main(String[] args) {
-        int A, B, C;
-        A = Integer.parseInt(JOptionPane.showInputDialog("Lado A "));
-        B = Integer.parseInt(JOptionPane.showInputDialog("Lado B "));
-        C = Integer.parseInt(JOptionPane.showInputDialog("Lado C "));
-            if (A != 0 && B != 0 && C != 0){
-                if (A + B > C && A + C > B && B + C > A){
-                    if (A != B && A != C && B != C){
-                        JOptionPane.showMessageDialog(null, "Escaleno"); // perguntas na caixinha  
-                    }
-                    else{
-                        if (A == B && B == C){
+        int ladoA, ladoB, ladoC;
+        ladoA = Integer.parseInt(JOptionPane.showInputDialog("Lado A "));
+        ladoB = Integer.parseInt(JOptionPane.showInputDialog("Lado B "));
+        ladoC = Integer.parseInt(JOptionPane.showInputDialog("Lado C "));
+        
+        if (ladoA != 0 && ladoB != 0 && ladoC != 0) {
+            if (ladoA + ladoB > ladoC && ladoA + ladoC > ladoB && ladoB + ladoC > ladoA) {
+                if (ladoA != ladoB && ladoA != ladoC && ladoB != ladoC) {
+                    JOptionPane.showMessageDialog(null, "Escaleno");
+                } else {
+                    if (ladoA == ladoB && ladoB == ladoC) {
                         JOptionPane.showMessageDialog(null, "Equilátero");
-                        }
-                        else{
-                            JOptionPane.showMessageDialog(null, "Isósceles");
-                        }
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Isósceles");
                     }
                 }
-                else{
-                JOptionPane.showMessageDialog(null, "Não forma um triângulo");
-                }
-            }
-            else{
+            } else {
                 JOptionPane.showMessageDialog(null, "Não forma um triângulo");
             }
+        } else {
+            JOptionPane.showMessageDialog(null, "Não forma um triângulo");
         }
+    }
 }
