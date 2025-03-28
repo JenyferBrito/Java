@@ -1,0 +1,108 @@
+package exercíciomatriz;
+
+import java.util.Random;
+
+public class ExercícioMatriz {
+
+    public static void main(String[] args) {
+         Random numeros = new Random();
+         
+         int mat[][]= new int [4][4];
+         int i,j,k,l;
+         int contadorImpar=0;
+         int contadorPar=0;
+         int vetDP[]= new int [4];
+         int vetDS[] = new int [4];   
+         int vetor;
+         
+         
+         for(i=0; i<4; i++){
+             for (j=0; j<4; j++){
+                 mat[i][j]= numeros.nextInt(100);
+                
+             }
+         }
+           for(i=0; i<4; i++){
+                for (j=0; j<4; j++){
+                  if (mat [i][j] %2==0){
+                      contadorPar ++;
+                }else{
+                      contadorImpar ++;
+                  }
+               
+           } 
+           
+           }
+           
+           int vetPar[] = new int [contadorPar];
+           int vetImpar []= new int [contadorImpar];
+           
+           k =0;
+           l =0;        
+           
+           for(i=0; i<4; i++){
+               for (j=0; j<4; j++){
+                   if (mat[i][j]%2==0){
+                       vetPar [k]= mat [i][j];
+                       k++;
+                   }else {
+                       vetImpar [l]= mat [i][j];
+                       l++;
+                   }
+               }
+           }
+           k=0;
+           l=0;
+           
+           for(i=0; i<4; i++){
+               for (j=0; j<4; j++){
+                   if (i==j){
+                       vetDP [k]= mat [i][j];
+                       k++;
+                   }
+               }
+           }
+           k=0;
+           for(i=0; i<4; i++){
+               for (j=0; j<4; j++){
+                   if (i+j ==3){
+                       vetDS [k]=mat [i][j];
+                       k++;
+                   }
+
+               }
+           }
+           System.out.print("Matriz Carregada:\n");
+           for(i=0; i<4; i++){
+               for (j=0; j<4; j++){
+                   System.out.print(mat [i][j]+ "\t");
+               }
+               
+               System.out.println ("\n");
+           
+    }
+           System.out.println("Vetor da Diagonal Principal: \n" );
+           for (int vet: vetDP){
+               
+           
+              System.out.print(vet + "\t");
+           }
+           System.out.println("\n\nVetor da Diagonal Secundaria: \n" );
+           for (int vet : vetDS){
+               
+           
+               System.out.println(vet + "\t");
+           }
+           System.out.println("\n\nVetor dos numeros Pares: \n ");
+           for (int vet : vetPar){
+               
+            System.out.print(vet + "\t");
+           }
+           
+           System.out.println("n\nVetor dos números Impares:\n");
+           for (int vet : vetImpar){
+               
+               System.out.println(vet +"\t");
+           }
+    }
+}
