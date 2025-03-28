@@ -1,0 +1,31 @@
+package exerciciojava1;
+
+import java.util.Scanner;
+
+public class ExercicioJava1 {
+
+    public static void main(String[] args) {
+        Scanner leia = new Scanner(System.in);
+        String senha = "";
+        int contador = 1;
+        String senhaCorreta = "23"; // Defina a senha correta aqui
+
+        while (!senha.equals(senhaCorreta) && contador <= 2) {
+            System.out.println("Digite sua senha (apenas 2 números): ");
+            senha = leia.next();
+
+            if (!senha.equals(senhaCorreta)) {
+                System.out.println("SENHA INCORRETA, TENTE NOVAMENTE");
+                contador++;
+            }
+        }
+
+        if (senha.equals(senhaCorreta)) {
+            System.out.println("ACESSO PERMITIDO");
+        } else {
+            System.out.println("ACESSO BLOQUEADO (SENHA INCORRETA)");
+        }
+
+        leia.close();
+    }
+}
