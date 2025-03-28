@@ -9,7 +9,7 @@ public class Atividade1 {
             if (A != 0 && B != 0 && C != 0){
                 if (A + B > C && A + C > B && B + C > A){
                     if (A != B && A != C && B != C){
-                        JOptionPane.showMessageDialog(null, "Escaleno");
+                        JOptionPane.showMessageDialog(null, "Escaleno"); // perguntas na caixinha  
                     }
                     else{
                         if (A == B && B == C){
